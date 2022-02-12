@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商户数据生成工具</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/demo.js"></script>
 </head>
+
 <body>
-    <h1>hellow</h1>
+    <div class="barner">
+        <div class="left">
+            <h1>商户数据生成工具</h1>
+        </div>
+        <div class="right">
+            <input id="select_text" type="text" placeholder="请选择文件···" readonly />
+            <input id="select_file" type="file" />
+            <a id="select_btn" href="javascript:void(0);">选择文件</a>
+        </div>
+    </div>
+    <div class="content">
+        <div id="table"></div>
+        <div id="chart" style="width: 100%; height: 300px;"></div>
+    </div>
 </body>
+
 </html>
