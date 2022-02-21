@@ -42,7 +42,7 @@ function importf(obj) {//导入
                 data[i + 1].push(jsondata[i][key]);
             }
         }
-        creattable(data);
+        // creattable(data);
 
         getMultiBarChart(data);
     };
@@ -136,23 +136,83 @@ getMultiBarChart = function (datatable) {
             {
                 name: '金牌客户',
                 type: 'bar',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true, //开启显示
+                            position: 'top', //在上方显示
+                            textStyle: { //数值样式
+                                color: '#ffffff',
+                                fontSize: 16
+                            }
+                        }
+                    }
+                }
             },
             {
                 name: '银牌客户',
                 type: 'bar',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true, //开启显示
+                            position: 'top', //在上方显示
+                            textStyle: { //数值样式
+                                color: '#ffffff',
+                                fontSize: 16
+                            }
+                        }
+                    }
+                }
                
             },
             {
                 name: '一般客户',
                 type: 'bar',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true, //开启显示
+                            position: 'top', //在上方显示
+                            textStyle: { //数值样式
+                                color: '#ffffff',
+                                fontSize: 16
+                            }
+                        }
+                    }
+                }
             },
             {
                 name: '较差客户',
                 type: 'bar',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true, //开启显示
+                            position: 'top', //在上方显示
+                            textStyle: { //数值样式
+                                color: '#ffffff',
+                                fontSize: 16
+                            }
+                        }
+                    }
+                }
             },
             {
                 name: '未使用',
                 type: 'bar',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true, //开启显示
+                            position: 'top', //在上方显示
+                            textStyle: { //数值样式
+                                color: '#ffffff',
+                                fontSize: 16
+                            }
+                        }
+                    }
+                }
             },
         ]
     };
