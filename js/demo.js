@@ -77,38 +77,84 @@ function creattable(data) {
 }
 
 getMultiBarChart = function (datatable) {
-    var colors = ['#0099CC', '#FF9933', '#99CC33', '#393939', '#f50001', '#fad797', '#59ccf7', '#c3b4df'];
     var myChart = echarts.init(document.getElementById('chart'));
-    var option = {
-        legend: { bottom: "bottom" , textStyle: { color:'#ffffff'}},
-        dataset: {
-            source: datatable
-        },
-        textStyle: { color:'#ffffff'},
-        xAxis: [
-            { type: 'category', gridIndex: 0, color: '#fff'}
-        ],
-        yAxis: [
-            { gridIndex: 0}
-        ],
-        series: []
-    };
-    for (var i = 0; i < datatable.length - 1; i++) {
-        option.series[i] = {
-            type: 'bar', seriesLayoutBy: 'row',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'top'
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: colors[i],
-                }
-            },
-        };
+    var first_1 = ['城区一部','金牌客户'];
+    var first_2 = ['城区一部','银牌客户'];
+    var first_3 = ['城区一部','一般客户'];
+    var first_4 = ['城区一部','较差客户'];
+    var first_5 = ['城区一部','-'];
+    var second_1 = ['城区二部','金牌客户'];
+    var second_2 = ['城区二部','银牌客户'];
+    var second_3 = ['城区二部','一般客户'];
+    var second_4 = ['城区二部','较差客户'];
+    var second_5 = ['城区二部','-'];
+    var three_1 = ['城区三部','金牌客户'];
+    var three_2 = ['城区三部','银牌客户'];
+    var three_3 = ['城区三部','一般客户'];
+    var three_4 = ['城区三部','较差客户'];
+    var three_5 = ['城区三部','-'];
+    var four_1 = ['城区四部','金牌客户'];
+    var four_2 = ['城区四部','银牌客户'];
+    var four_3 = ['城区四部','一般客户'];
+    var four_4 = ['城区四部','较差客户'];
+    var four_5 = ['城区四部','-'];
+    function find(arr){
+        var arrList = []
+        for(var i=0;i<datatable.length;i++){
+            if(datatable[i].toString() == arr.toString()){
+                arrList.push(datatable[i])
+            }
+         }
+        return arrList.length
     }
-    // 使用刚指定的配置项和数据显示图表。
+    var option = {
+        color:['#f74d4d', '#0c84c6', '#ffa510', '#41b7ac', '#95a2ff'],
+        legend: {
+            textStyle: { color: '#ffffff' }
+        },
+        tooltip: {
+        },
+        xAxis: [{
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: "#ffffff",
+                }
+            }
+        }],
+        yAxis : {},
+        dataset:{
+            source:[
+                ['product', '金牌客户', '银牌客户', '一般客户','较差客户','未使用'],
+                ['城区一部',find(first_1),find(first_2),find(first_3),find(first_4),find(first_5)],
+                ['城区二部',find(second_1),find(second_2),find(second_3),find(second_4),find(second_5)],
+                ['城区三部',find(three_1),find(three_2),find(three_3),find(three_4),find(three_5)],
+                ['城区四部',find(four_1),find(four_2),find(four_3),find(four_4),find(four_5)],
+            ]
+        },
+        series: [
+            {
+                name: '金牌客户',
+                type: 'bar',
+            },
+            {
+                name: '银牌客户',
+                type: 'bar',
+               
+            },
+            {
+                name: '一般客户',
+                type: 'bar',
+            },
+            {
+                name: '较差客户',
+                type: 'bar',
+            },
+            {
+                name: '未使用',
+                type: 'bar',
+            },
+        ]
+    };
     myChart.setOption(option);
 }
